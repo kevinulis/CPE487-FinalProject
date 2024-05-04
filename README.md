@@ -1,2 +1,3 @@
-# CPE487-FinalProject
-CPE 487: Digital System Design Final Project
+# CPE 487 2024S: Final Project
+## Kevin Ulis & Arminder Singh
+### Breakout Game
