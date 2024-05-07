@@ -1,0 +1,460 @@
+
+*** Running vivado
+    with args -log pong.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source pong.tcl
+
+
+ECHO is off.
+ECHO is off.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source pong.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/utils_1/imports/synth_1/pong.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/utils_1/imports/synth_1/pong.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top pong -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9416
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1307.590 ; gain = 440.945
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-9112] actual for formal port 'red_in' is neither a static name nor a globally static expression [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/pong.vhd:104]
+WARNING: [Synth 8-9112] actual for formal port 'green_in' is neither a static name nor a globally static expression [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/pong.vhd:105]
+WARNING: [Synth 8-9112] actual for formal port 'blue_in' is neither a static name nor a globally static expression [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/pong.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'pong' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/pong.vhd:22]
+INFO: [Synth 8-3491] module 'bat_n_ball' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:6' bound to instance 'add_bb' of component 'bat_n_ball' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/pong.vhd:88]
+INFO: [Synth 8-638] synthesizing module 'bat_n_ball' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:20]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick1' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:75]
+INFO: [Synth 8-638] synthesizing module 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'brick' (0#1) [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:16]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick2' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:86]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick3' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:97]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick4' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:108]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick5' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:119]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick6' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:130]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick7' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:141]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick8' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:152]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick9' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:163]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick10' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:174]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick11' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:185]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick12' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:196]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick13' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:207]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick14' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:218]
+INFO: [Synth 8-3491] module 'brick' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:6' bound to instance 'brick15' of component 'brick' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:229]
+WARNING: [Synth 8-614] signal 'game_on' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:245]
+WARNING: [Synth 8-614] signal 'brick1present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+WARNING: [Synth 8-614] signal 'brick2present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+WARNING: [Synth 8-614] signal 'brick3present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+WARNING: [Synth 8-614] signal 'brick4present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+WARNING: [Synth 8-614] signal 'brick5present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+WARNING: [Synth 8-614] signal 'brick6present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+WARNING: [Synth 8-614] signal 'brick7present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+WARNING: [Synth 8-614] signal 'brick8present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+WARNING: [Synth 8-614] signal 'brick9present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+WARNING: [Synth 8-614] signal 'brick10present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+WARNING: [Synth 8-614] signal 'brick11present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+WARNING: [Synth 8-614] signal 'brick12present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+WARNING: [Synth 8-614] signal 'brick13present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+WARNING: [Synth 8-614] signal 'brick14present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+WARNING: [Synth 8-614] signal 'brick15present' is read in the process but is not in the sensitivity list [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:280]
+INFO: [Synth 8-256] done synthesizing module 'bat_n_ball' (0#1) [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/bat_n_ball.vhd:20]
+INFO: [Synth 8-3491] module 'vga_sync' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/vga_sync.vhd:5' bound to instance 'vga_driver' of component 'vga_sync' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/pong.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'vga_sync' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/vga_sync.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'vga_sync' (0#1) [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/vga_sync.vhd:21]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/clk_wiz_0.vhd:74' bound to instance 'clk_wiz_0_inst' of component 'clk_wiz_0' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/pong.vhd:117]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/clk_wiz_0.vhd:83]
+INFO: [Synth 8-3491] module 'clk_wiz_0_clk_wiz' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/clk_wiz_0_clk_wiz.vhd:63' bound to instance 'U0' of component 'clk_wiz_0_clk_wiz' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/clk_wiz_0.vhd:98]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0_clk_wiz' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/clk_wiz_0_clk_wiz.vhd:72]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 10.125000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 25.250000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT4_CASCADE bound to: 0 - type: bool 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter STARTUP_WAIT bound to: 0 - type: bool 
+INFO: [Synth 8-113] binding component instance 'mmcm_adv_inst' to cell 'MMCME2_ADV' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/clk_wiz_0_clk_wiz.vhd:114]
+INFO: [Synth 8-113] binding component instance 'clkf_buf' to cell 'BUFG' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/clk_wiz_0_clk_wiz.vhd:176]
+INFO: [Synth 8-113] binding component instance 'clkout1_buf' to cell 'BUFG' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/clk_wiz_0_clk_wiz.vhd:183]
+INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0_clk_wiz' (0#1) [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/clk_wiz_0_clk_wiz.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (0#1) [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/clk_wiz_0.vhd:83]
+INFO: [Synth 8-3491] module 'leddec16' declared at 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-4/leddec16.vhd:4' bound to instance 'led1' of component 'leddec16' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/pong.vhd:122]
+INFO: [Synth 8-638] synthesizing module 'leddec16' [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-4/leddec16.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'leddec16' (0#1) [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-4/leddec16.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'pong' (0#1) [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/imports/Lab-6/pong.vhd:22]
+WARNING: [Synth 8-3848] Net present in module/entity brick does not have driver. [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/sources_1/new/brick.vhd:12]
+WARNING: [Synth 8-7129] Port present in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[31] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[30] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[29] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[28] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[27] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[26] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[25] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[24] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[23] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[22] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[21] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[20] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[19] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[18] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[17] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[16] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[15] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[14] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[13] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[12] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[11] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[10] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[9] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[8] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[7] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[6] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[5] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[4] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[3] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[2] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[1] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_x[0] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[31] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[30] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[29] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[28] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[27] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[26] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[25] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[24] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[23] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[22] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[21] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[20] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[19] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[18] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[17] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[16] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[15] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[14] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[13] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[12] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[11] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[10] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[9] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[8] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[7] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[6] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[5] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[4] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[3] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[2] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[1] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port brick_y[0] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_x1[10] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_x1[9] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_x1[8] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_x1[7] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_x1[6] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_x1[5] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_x1[4] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_x1[3] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_x1[2] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_x1[1] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_x1[0] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_y1[10] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_y1[9] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_y1[8] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_y1[7] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_y1[6] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_y1[5] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_y1[4] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_y1[3] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_y1[2] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_y1[1] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ball_y1[0] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bsize1[31] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bsize1[30] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bsize1[29] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bsize1[28] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bsize1[27] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bsize1[26] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bsize1[25] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bsize1[24] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bsize1[23] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bsize1[22] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bsize1[21] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bsize1[20] in module brick is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bsize1[19] in module brick is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1421.914 ; gain = 555.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1421.914 ; gain = 555.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1421.914 ; gain = 555.270
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1421.914 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/constrs_1/imports/Lab-6/pong.xdc]
+Finished Parsing XDC File [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/constrs_1/imports/Lab-6/pong.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Kevin/Documents/Vivado/breakout/breakout.srcs/constrs_1/imports/Lab-6/pong.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/pong_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/pong_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1480.875 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+The system cannot find the path specified.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1480.875 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1480.875 ; gain = 614.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1480.875 ; gain = 614.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1480.875 ; gain = 614.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1480.875 ; gain = 614.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   12 Bit       Adders := 2     
+	   2 Input   11 Bit       Adders := 11    
+	   3 Input   11 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               11 Bit    Registers := 9     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 18    
++---Muxes : 
+	   3 Input   16 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 7     
+	  18 Input   11 Bit        Muxes := 1     
+	   3 Input   11 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 4     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	  19 Input    1 Bit        Muxes := 1     
+	  15 Input    1 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP plusOp, operation Mode is: PCIN+A*B.
+DSP Report: operator plusOp is absorbed into DSP plusOp.
+DSP Report: operator multOp is absorbed into DSP plusOp.
+WARNING: [Synth 8-3917] design pong has port SEG7_anode[7] driven by constant 1
+WARNING: [Synth 8-3917] design pong has port SEG7_anode[6] driven by constant 1
+WARNING: [Synth 8-3917] design pong has port SEG7_anode[5] driven by constant 1
+WARNING: [Synth 8-3917] design pong has port SEG7_anode[4] driven by constant 1
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1480.875 ; gain = 614.230
+---------------------------------------------------------------------------------
+ Sort Area is  multOp_0 : 0 0 : 863 1791 : Used 1 time 0
+ Sort Area is  multOp_0 : 0 1 : 928 1791 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|bat_n_ball  | A*B         | 11     | 11     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|bat_n_ball  | PCIN+A*B    | 11     | 11     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1480.875 ; gain = 614.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 1510.633 ; gain = 643.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1521.797 ; gain = 655.152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1527.574 ; gain = 660.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1527.574 ; gain = 660.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1527.574 ; gain = 660.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1527.574 ; gain = 660.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1527.574 ; gain = 660.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1527.574 ; gain = 660.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|bat_n_ball  | A*B         | 11     | 11     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|bat_n_ball  | PCIN+A*B    | 11     | 11     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BUFG       |     4|
+|2     |CARRY4     |    35|
+|3     |DSP48E1    |     2|
+|4     |LUT1       |     9|
+|5     |LUT2       |    92|
+|6     |LUT3       |    55|
+|7     |LUT4       |    63|
+|8     |LUT5       |    78|
+|9     |LUT6       |   102|
+|10    |MMCME2_ADV |     1|
+|11    |FDRE       |   121|
+|12    |FDSE       |     5|
+|13    |IBUF       |     4|
+|14    |OBUF       |    29|
++------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1527.574 ; gain = 660.930
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 1527.574 ; gain = 601.969
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1527.574 ; gain = 660.930
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1527.574 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 38 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1548.324 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+The system cannot find the path specified.
+Synth Design complete | Checksum: 8c71ea15
+INFO: [Common 17-83] Releasing license: Synthesis
+62 Infos, 125 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 1548.324 ; gain = 1087.344
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1548.324 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Kevin/Documents/Vivado/breakout/breakout.runs/synth_1/pong.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file pong_utilization_synth.rpt -pb pong_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu May  2 13:41:44 2024...
