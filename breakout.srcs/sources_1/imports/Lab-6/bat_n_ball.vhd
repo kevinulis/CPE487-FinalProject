@@ -366,11 +366,6 @@ BEGIN
         VARIABLE temp : STD_LOGIC_VECTOR (11 DOWNTO 0);
     BEGIN
         WAIT UNTIL rising_edge(v_sync);
-        IF sw = '1' THEN
-            ball_speed <= CONV_STD_LOGIC_VECTOR (6, 11);
-        ELSE
-            ball_speed <= CONV_STD_LOGIC_VECTOR (3, 11);
-        END IF;
         IF serve = '1' AND game_on = '0' THEN -- test for new serve
             game_on <= '1';
             ball_y_motion <= (NOT ball_speed) + 1; -- set vspeed to (- ball_speed) pixels
