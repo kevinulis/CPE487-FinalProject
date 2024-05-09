@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Thu May  9 10:33:16 2024
+| Date         : Thu May  9 11:00:21 2024
 | Host         : DESKTOP-N297RR6 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file pong_utilization_synth.rpt -pb pong_utilization_synth.pb
 | Design       : pong
@@ -31,8 +31,8 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  301 |     0 |          0 |     63400 |  0.47 |
-|   LUT as Logic          |  301 |     0 |          0 |     63400 |  0.47 |
+| Slice LUTs*             |  303 |     0 |          0 |     63400 |  0.48 |
+|   LUT as Logic          |  303 |     0 |          0 |     63400 |  0.48 |
 |   LUT as Memory         |    0 |     0 |          0 |     19000 |  0.00 |
 | Slice Registers         |  126 |     0 |          0 |    126800 |  0.10 |
 |   Register as Flip Flop |  126 |     0 |          0 |    126800 |  0.10 |
@@ -93,7 +93,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   33 |     0 |          0 |       210 | 15.71 |
+| Bonded IOB                  |   34 |     0 |          0 |       210 | 16.19 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |          0 |         6 |  0.00 |
@@ -150,16 +150,16 @@ Warning! LUT value is adjusted to account for LUT combining.
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
 | FDRE       |  121 |        Flop & Latch |
-| LUT6       |  102 |                 LUT |
-| LUT2       |   92 |                 LUT |
-| LUT5       |   78 |                 LUT |
-| LUT4       |   63 |                 LUT |
-| LUT3       |   55 |                 LUT |
+| LUT6       |  111 |                 LUT |
+| LUT2       |   94 |                 LUT |
+| LUT5       |   68 |                 LUT |
+| LUT4       |   58 |                 LUT |
+| LUT3       |   57 |                 LUT |
 | CARRY4     |   35 |          CarryLogic |
 | OBUF       |   29 |                  IO |
-| LUT1       |    9 |                 LUT |
+| LUT1       |    8 |                 LUT |
+| IBUF       |    5 |                  IO |
 | FDSE       |    5 |        Flop & Latch |
-| IBUF       |    4 |                  IO |
 | BUFG       |    4 |               Clock |
 | DSP48E1    |    2 |    Block Arithmetic |
 | MMCME2_ADV |    1 |               Clock |
