@@ -13,7 +13,8 @@ ENTITY bat_n_ball IS
         red : OUT STD_LOGIC;
         green : OUT STD_LOGIC;
         blue : OUT STD_LOGIC;
-        disp_data : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+        disp_data : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        sw : IN STD_LOGIC
     );
 END bat_n_ball;
 
@@ -22,7 +23,7 @@ ARCHITECTURE Behavioral OF bat_n_ball IS
     CONSTANT bat_w : INTEGER := 40; -- bat width in pixels
     CONSTANT bat_h : INTEGER := 3; -- bat height in pixels
     -- distance ball moves each frame
-    CONSTANT ball_speed : STD_LOGIC_VECTOR (10 DOWNTO 0) := CONV_STD_LOGIC_VECTOR (6, 11);
+    SIGNAL ball_speed : STD_LOGIC_VECTOR (10 DOWNTO 0) := CONV_STD_LOGIC_VECTOR (6, 11);
     SIGNAL ball_on : STD_LOGIC; -- indicates whether ball is at current pixel position
     SIGNAL bat_on : STD_LOGIC; -- indicates whether bat at over current pixel position
     SIGNAL game_on : STD_LOGIC := '0'; -- indicates whether ball is in play
@@ -365,6 +366,11 @@ BEGIN
         VARIABLE temp : STD_LOGIC_VECTOR (11 DOWNTO 0);
     BEGIN
         WAIT UNTIL rising_edge(v_sync);
+        IF sw = '1' THEN
+            ball_speed <= CONV_STD_LOGIC_VECTOR (6, 11);
+        ELSE
+            ball_speed <= CONV_STD_LOGIC_VECTOR (3, 11);
+        END IF;
         IF serve = '1' AND game_on = '0' THEN -- test for new serve
             game_on <= '1';
             ball_y_motion <= (NOT ball_speed) + 1; -- set vspeed to (- ball_speed) pixels

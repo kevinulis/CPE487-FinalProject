@@ -15,7 +15,8 @@ ENTITY pong IS
         btnr : IN STD_LOGIC;
         btn0 : IN STD_LOGIC;
         SEG7_anode : OUT STD_LOGIC_VECTOR (7 DOWNTO 0); -- anodes of four 7-seg displays
-        SEG7_seg : OUT STD_LOGIC_VECTOR (6 DOWNTO 0)
+        SEG7_seg : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
+        switch1 : IN STD_LOGIC
     ); 
 END pong;
 
@@ -39,7 +40,8 @@ ARCHITECTURE Behavioral OF pong IS
             red : OUT STD_LOGIC;
             green : OUT STD_LOGIC;
             blue : OUT STD_LOGIC;
-            disp_data : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+            disp_data : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+            sw : IN STD_LOGIC
         );
     END COMPONENT;
     COMPONENT vga_sync IS
@@ -95,7 +97,8 @@ BEGIN
         red => S_red, 
         green => S_green, 
         blue => S_blue,
-        disp_data => display
+        disp_data => display,
+        sw => switch1
     );
     
     vga_driver : vga_sync

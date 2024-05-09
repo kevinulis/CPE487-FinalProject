@@ -1,55 +1,20 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="3824" HostCore="8" HostMemory="016872415232">
+    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="23608" HostCore="8" HostMemory="016872415232">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="10148" HostCore="8" HostMemory="016872415232">
+    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="2828" HostCore="8" HostMemory="016872415232">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="7852" HostCore="8" HostMemory="016872415232">
+    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="23592" HostCore="8" HostMemory="016872415232">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="3124" HostCore="8" HostMemory="016872415232">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="15184" HostCore="8" HostMemory="016872415232">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="17896" HostCore="8" HostMemory="016872415232">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="14084" HostCore="8" HostMemory="016872415232">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="17356" HostCore="8" HostMemory="016872415232">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="10420" HostCore="8" HostMemory="016872415232">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="5100" HostCore="8" HostMemory="016872415232">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="13524" HostCore="8" HostMemory="016872415232">
+    <Process Command="vivado.bat" Owner="Kevin" Host="DESKTOP-N297RR6" Pid="18556" HostCore="8" HostMemory="016872415232">
     </Process>
 </ProcessHandle>
