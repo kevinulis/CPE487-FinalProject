@@ -111,3 +111,28 @@ The constant `bat_w`, which describes the bat width in pixels, was changed from 
 ```vhdl
 CONSTANT bat_w : INTEGER := 40; -- bat width in pixels
 ```
+
+### Brick initializations
+In order to create a brick on the screen, new signals must be created to describe where the brick should be drawn, the brick dimensions (height, width) the initial X and Y coordinates of the brick, and the present state of the brick. The signal `brick_on` is set when drawing each brick in order to tell the VGA driver to draw a magenta pixel on the screen. The constant integer signals `brick_width` and `brick_height` tell the width of the brick and the height of the brick in pixels, respectively. The constant integer signals `brick1x` and `brick1y` tell the initial position of the first brick, which is used as a reference to all other bricks that are drawn. These initial coordinates represent the top left of the brick, as the X and Y coordinates increase the further away the current pixel is from the top left. Lastly, the signals `brick1present` through `brick15present` represent if the brick should be displayed on the screen. If the bit is `1`, then the brick has not been hit yet, so it should be displayed. If the bit is `0`, then the brick has been hit and should not be drawn.
+```vhdl
+SIGNAL brick_on : STD_LOGIC; -- indicates whether brick at over current pixel position
+    CONSTANT brick_width : INTEGER := 60;
+    CONSTANT brick_height : INTEGER := 15;
+    CONSTANT brick1x : INTEGER := 100;
+    CONSTANT brick1y : INTEGER := 60;
+    SIGNAL brick1present : STD_LOGIC := '1';
+    SIGNAL brick2present : STD_LOGIC := '1';
+    SIGNAL brick3present : STD_LOGIC := '1';
+    SIGNAL brick4present : STD_LOGIC := '1';
+    SIGNAL brick5present : STD_LOGIC := '1';
+    SIGNAL brick6present : STD_LOGIC := '1';
+    SIGNAL brick7present : STD_LOGIC := '1';
+    SIGNAL brick8present : STD_LOGIC := '1';
+    SIGNAL brick9present : STD_LOGIC := '1';
+    SIGNAL brick10present : STD_LOGIC := '1';
+    SIGNAL brick11present : STD_LOGIC := '1';
+    SIGNAL brick12present : STD_LOGIC := '1';
+    SIGNAL brick13present : STD_LOGIC := '1';
+    SIGNAL brick14present : STD_LOGIC := '1';
+    SIGNAL brick15present : STD_LOGIC := '1';
+```
