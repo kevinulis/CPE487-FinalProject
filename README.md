@@ -136,3 +136,18 @@ SIGNAL brick_on : STD_LOGIC; -- indicates whether brick at over current pixel po
     SIGNAL brick14present : STD_LOGIC := '1';
     SIGNAL brick15present : STD_LOGIC := '1';
 ```
+
+The `brick` component is then declared, which uses signals `v_sync`, `brick_x`, `brick_y`, `ball_x1`, `ball_y1`, `bsize1`, and `present`. The `v_sync` signal is the vertical sync pulse signal from the VGA driver. The `brick_x` and `brick_y` signals are the X and Y coordinates of the brick respectively. The `ball_x1` and `ball_y1` signals describe the current X and Y coordinate of the ball respectively. The `bsize1` signal describes the radius of the ball, which would have been used for collision detection with the ball and the brick. Lastly, the `present` signal describes if the brick should be drawn or not, and it if should do collision detection or not.
+```vhdl
+COMPONENT brick IS
+        PORT(
+            v_sync : IN STD_LOGIC;
+            brick_x : IN INTEGER;
+            brick_y : IN INTEGER;
+            ball_x1: IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+            ball_y1 : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+            bsize1 : IN INTEGER;
+            present : out STD_LOGIC
+            );
+    END COMPONENT;
+```
