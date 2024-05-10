@@ -16,7 +16,7 @@ A cyan-colored bat is drawn at the bottom of the screen, which is user-controlle
 - Nexys A7-100T board, the bat and game state is controlled by the buttons on the board, and game status is on the display.
 
 ## Block Diagram
-![alt text](diagram.png)
+![alt text](diagram.jpeg)
 #
 ## Modifications done to Lab 6 base code
 This project was originally built from the alternative Lab 6 source code, which used the board buttons to move the bat across the screen. The "adc_if.vhd" file is not used in this project, as the external potentiometer is not used and no analog to digital conversion is needed.
