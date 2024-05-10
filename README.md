@@ -296,6 +296,123 @@ blockdraw : PROCESS (pixel_row, pixel_col) IS
         ELSE
             brick_on <= '0';
         END IF;
+      END PROCESS;
 ```
+### "mball" Process Modifications
+Changes must be made to this process in order to have collision detection with the bricks, to properly reset the game, and to change the data on the seven-segment display. When the process checks if the reset button `BTNC` is pressed and the game is over, the `game_on` and `ball_y_motion` signals are set as expected, but all of the `brick_present` signals must also be reset to their default value of 1. This ensures that all of the bricks are present at the beginning of the game. The data on the display is also set to show the values "E487" to indicate the game is being played.
+```vhdl
+ -- process to move ball once every frame (i.e., once every vsync pulse)
+    mball : PROCESS
+        VARIABLE temp : STD_LOGIC_VECTOR (11 DOWNTO 0);
+    BEGIN
+        WAIT UNTIL rising_edge(v_sync);
+        IF serve = '1' AND game_on = '0' THEN -- test for new serve
+            game_on <= '1';
+            ball_y_motion <= (NOT ball_speed) + 1; -- set vspeed to (- ball_speed) pixels
+            brick1present <= '1';
+            brick2present <= '1';
+            brick3present <= '1';
+            brick4present <= '1';
+            brick5present <= '1';
+            brick6present <= '1';
+            brick7present <= '1';
+            brick8present <= '1';
+            brick9present <= '1';
+            brick10present <= '1';
+            brick11present <= '1';
+            brick12present <= '1';
+            brick13present <= '1';
+            brick14present <= '1';
+            brick15present <= '1';
+            disp_data <= "1110010010000111";
+......................................................................................
+```
+When the ball meets the bottom wall, the `game_on` signal is set to 0, indicating the game is over. It will then check if any of the `brick_present` signals are equal to 1, in which it will set the display data to show "L0SE" to show the player they lost the game.
+```vhdl
+..................................................................................
+ELSIF ball_y + bsize >= 600 THEN -- if ball meets bottom wall
+            ball_y_motion <= (NOT ball_speed) + 1; -- set vspeed to (- ball_speed) pixels
+            game_on <= '0'; -- and make ball disappear
+            IF brick1present = '1' OR brick2present = '1' OR brick3present = '1' OR 
+            brick4present = '1' OR brick5present = '1' OR brick6present = '1' OR 
+            brick7present = '1' OR brick8present = '1' OR brick9present = '1' OR brick10present = '1' 
+             OR brick11present = '1' OR brick12present = '1' OR brick13present = '1' OR brick14present = '1' OR brick15present = '1' THEN
+                disp_data <= "1010000010111110";
+            END IF;
+        END IF;
+..................................................................................
+```
+
+Within the "mball" process, an IF statement checks to see whether the `game_on` signal is set to 1, as well as if all of the `brick_present` signals are set to 0. If these conditions are fulfilled, then it will set the data on the display to show "G00D" to congratulate the user on winning the game.
+```vhdl
+..........................
+IF game_on = '1' AND brick1present = '0' AND brick2present = '0' AND brick3present = '0' AND brick4present = '0' AND brick5present = '0' AND brick6present = '0' AND brick7present = '0' AND brick8present = '0' AND brick9present = '0' AND brick10present = '0' THEN
+            disp_data <= "0110000000001101";
+        END IF;
+..........................
+```
+
+The collision detection for the bricks is very similar to the collision dection for the bat, as it just needs to invert the `ball_y_motion` signal. The same parameters for checking if the ball is colliding with the bat are used for the brick collision detection. However, another check must be done to ensure that brick is present on the screen, which is done by adding another conditional `AND brick_present = '1'` to the IF statement. If all of the conditions are met, it will set the `brick_present` signal to 0. It will also determine which value `ball_y_motion` should be set as. If `(ball_y_motion = ball_speed)` then it sets it to `(NOT ball_speed)+1`. If they are not equal, it sets it to `ball_speed`. This IF statement is done for every single brick, as they are independent of each other and must be checked every `v_sync` pulse.\
+The code below only shows the collision detection for brick1 and brick2 for simplicity.
+```vhdl
+        IF (ball_x + bsize/2) >= (brick1x - brick_width) AND
+         (ball_x - bsize/2) <= (brick1x + brick_width) AND
+             (ball_y + bsize/2) >= (brick1y - brick_height) AND
+             (ball_y - bsize/2) <= (brick1y + brick_height) AND brick1present = '1' THEN
+                brick1present <= '0';
+                IF(ball_y_motion = ball_speed) THEN
+                    ball_y_motion <= (NOT ball_speed)+1;
+                ELSE
+                    ball_y_motion <= ball_speed;
+                END IF;
+        END IF;
+        IF (ball_x + bsize/2) >= ((brick1x+150) - brick_width) AND
+         (ball_x - bsize/2) <= ((brick1x+150) + brick_width) AND
+             (ball_y + bsize/2) >= (brick1y - brick_height) AND
+             (ball_y - bsize/2) <= (brick1y + brick_height) AND brick2present = '1' THEN
+                brick2present <= '0';
+                IF(ball_y_motion = ball_speed) THEN
+                    ball_y_motion <= (NOT ball_speed)+1;
+                ELSE
+                    ball_y_motion <= ball_speed;
+                END IF;
+        END IF;
+.............................................................................................
+```
+## "leddec16.vhd" Modifications
+In order to create custom characters on the seven-segment display like "G" and "L", modifications must be made to the `seg` data assignments to correctly enable certain segments on the display. The digits "0", "4", "7", "8", "D", and "E" were not needed to be modified in any way. To create special characters, digits that were not used were repurposed. The digit "6" was repurposed into a letter "G" for use when the user won the game. [This website](https://www.electronicsforu.com/resources/7-segment-display-pinout-understanding) was used to help generate the binary sequence needed for certain letters, however the provided sequences must be reversed to work correctly on the board's seven-segment display. Digits "6", "A", and "B" were repurposed to create the letters "G", "L", and "S".
+```vhdl
+-- Turn on segments corresponding to 4-bit data word
+	seg <= "0000001" WHEN data4 = "0000" ELSE -- 0 used "0"
+	       "1001111" WHEN data4 = "0001" ELSE -- 1
+	       "0010010" WHEN data4 = "0010" ELSE -- 2
+	       "0000110" WHEN data4 = "0011" ELSE -- 3
+	       "1001100" WHEN data4 = "0100" ELSE -- 4 used "4"
+	       "0100100" WHEN data4 = "0101" ELSE -- 5
+	       --"0100000" WHEN data4 = "0110" ELSE -- 6
+	       "0100001" WHEN data4 = "0110" ELSE -- 6 used "G"
+	       "0001111" WHEN data4 = "0111" ELSE -- 7 used "7"
+	       "0000000" WHEN data4 = "1000" ELSE -- 8 used "8"
+	       "0000100" WHEN data4 = "1001" ELSE -- 9 
+	       --"0001000" WHEN data4 = "1010" ELSE -- A
+	       "1110001" WHEN data4 = "1010" ELSE -- A used "L"
+	       --"1100000" WHEN data4 = "1011" ELSE -- B
+	       "0100100" WHEN data4 = "1011" ELSE -- B used "S"
+	       "0110001" WHEN data4 = "1100" ELSE -- C
+	       "1000010" WHEN data4 = "1101" ELSE -- D used "D"
+	       "0110000" WHEN data4 = "1110" ELSE -- E used "E"
+	       "0111000" WHEN data4 = "1111" ELSE -- F
+	       "1111111";
+```
+### Conclusion
+The project and the finished product came out good, as the basic premise of "Breakout" was successfully implemented on the boards' FPGA module. In the future, or if given more time, the brick collision detection and drawing should be in its own separate file and simply created as a module/object instead. There was much trouble trying to implement all of the needed signals related to the VGA output as well as other dependencies for collision detection into the "brick" module, but given more time it could have been solved. 
+- Project Outline: Arminder
+- Brick Drawing: Kevin
+- Brick Initialization: Arminder
+- Brick Collision Detection: Arminder and Kevin
+- Seven-segment Display Integration: Kevin
+### Images
+![alt text](run.jpg)
 ![alt text](good.jpg)
+![alt text](lose.jpg)
 #
