@@ -162,3 +162,5 @@ COMPONENT brick IS
             );
     END COMPONENT;
 ```
+![alt text](good.heic)
+#
