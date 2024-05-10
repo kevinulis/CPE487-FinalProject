@@ -42,6 +42,9 @@ ARCHITECTURE Behavioral OF bat_n_ball IS
     CONSTANT brick_height : INTEGER := 15;
     CONSTANT brick1x : INTEGER := 100;
     CONSTANT brick1y : INTEGER := 60;
+    --
+    -- Brick presence boolean variables. 1 is present, 0 is not present.
+    --
     SIGNAL brick1present : STD_LOGIC := '1';
     SIGNAL brick2present : STD_LOGIC := '1';
     SIGNAL brick3present : STD_LOGIC := '1';
@@ -277,6 +280,8 @@ BEGIN
     END PROCESS;
     
     -- Process to draw Brick, set brick_on if current pixel address is covered by brick pos.
+    -- The sides of the brick act like the side walls, the top of the brick acts like the top of the bat,
+    -- and the bottom of the brick acts like the top wall.
     blockdraw : PROCESS (pixel_row, pixel_col) IS
     BEGIN
         IF brick1present = '1' AND ((pixel_col >= brick1x - brick_width) OR (brick1x <= brick_width)) AND
@@ -368,6 +373,9 @@ BEGIN
         IF serve = '1' AND game_on = '0' THEN -- test for new serve
             game_on <= '1';
             ball_y_motion <= (NOT ball_speed) + 1; -- set vspeed to (- ball_speed) pixels
+            --
+            -- On new serve, reset the brick states.
+            --
             brick1present <= '1';
             brick2present <= '1';
             brick3present <= '1';
