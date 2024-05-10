@@ -162,5 +162,140 @@ COMPONENT brick IS
             );
     END COMPONENT;
 ```
+Each brick's port map is then initialized. All bricks are given the same signals `v_sync`, `ball_x`, `ball_y`, and `bsize`. For each subsequent brick in the first row, the X location is incremented by 150 pixels. For example, all bricks in the row have an X position `brick1x`, `brick1x+150`, `brick1x+300`, `brick1x+450`, and `brick1x+600`. All of the bricks in a row have the same Y coordinate. For the first row, all bricks have a Y coordinate of `brick1y`. For the second row, the bricks have a similar sequence in their X coordinate as above, but their Y coordinate is `brick1y+brick1y`. For the next row, the Y coordinate is `brick1y+brick1y+brick1y`. Each brick is given its "brick_present" signal, where "_" is the brick number. 
+```vhdl
+brick1 : brick
+    PORT MAP(
+        v_sync => v_sync,
+        --brick_x => brick1x+5,
+        brick_x => brick1x,
+        brick_y => brick1y,
+        ball_x1 => ball_x,
+        ball_y1 => ball_y,
+        bsize1 => bsize,
+        present => brick1present
+    );
+    brick2 : brick
+    PORT MAP(
+        v_sync => v_sync,
+        --brick_x => brick1x+5,
+        brick_x => (brick1x+150),
+        brick_y => brick1y,
+        ball_x1 => ball_x,
+        ball_y1 => ball_y,
+        bsize1 => bsize,
+        present => brick2present
+    );
+    brick3 : brick
+    PORT MAP(
+        v_sync => v_sync,
+        --brick_x => brick1x+5,
+        brick_x => (brick1x+300),
+        brick_y => brick1y,
+        ball_x1 => ball_x,
+        ball_y1 => ball_y,
+        bsize1 => bsize,
+        present => brick3present
+    );
+    brick4 : brick
+    PORT MAP(
+        v_sync => v_sync,
+        --brick_x => brick1x+5,
+        brick_x => (brick1x+450),
+        brick_y => brick1y,
+        ball_x1 => ball_x,
+        ball_y1 => ball_y,
+        bsize1 => bsize,
+        present => brick4present
+    );
+    brick5 : brick
+    PORT MAP(
+        v_sync => v_sync,
+        --brick_x => brick1x+5,
+        brick_x => brick1x,
+        brick_y => brick1y+40,
+        ball_x1 => ball_x,
+        ball_y1 => ball_y,
+        bsize1 => bsize,
+        present => brick5present
+    );
+    brick6 : brick
+    PORT MAP(
+        v_sync => v_sync,
+        --brick_x => brick1x+5,
+        brick_x => (brick1x+150),
+        brick_y => (brick1y+brick1y),
+        ball_x1 => ball_x,
+        ball_y1 => ball_y,
+        bsize1 => bsize,
+        present => brick6present
+    );
+    brick7 : brick
+    PORT MAP(
+        v_sync => v_sync,
+        --brick_x => brick1x+5,
+        brick_x => (brick1x+300),
+        brick_y => (brick1y+brick1y),
+        ball_x1 => ball_x,
+        ball_y1 => ball_y,
+        bsize1 => bsize,
+        present => brick7present
+......................................
+    );
+```
+For the color of the bricks, we thought magenta would be the best in order to have some contrast on the screen. To create magenta, the `brick_on` signal must not be green, so it can be NAND'ed with `ball_on` when setting the `green` signal for the VGA output.
+```vhdl
+red <= NOT bat_on; -- color setup for red ball and cyan bat on white background
+    green <= NOT brick_on AND NOT ball_on ; --bricks are purple (red and blue)
+    blue <= NOT ball_on;
+```
+
+### "blockdraw" Process
+In order to draw the bricks onto the screen, we found it was easiest to change the `brick_on` in the "bat_n_ball.vhd" file because it had all of the necessary VGA signals associated with it. If we were to do drawing within "brick.vhd," we would need to pass through all necessary VGA signals while needing to wait for `v_sync` to turn on.\
+The drawing process for the bricks is extremely similar as drawing the bat. It first checks if the brick should be drawn on screen by checking `brick_present`. If it is present, it continues on to check if the current pixel being drawn (`pixel_col` and `pixel_row`) are within the boundaries of the bricks. If the location is within the boundaries, it sets `brick_on` to 1. The rest of the bricks are drawn through the same process by using an ELSIF statement.
+```vhdl
+blockdraw : PROCESS (pixel_row, pixel_col) IS
+    BEGIN
+        IF brick1present = '1' AND ((pixel_col >= brick1x - brick_width) OR (brick1x <= brick_width)) AND
+        (pixel_col <= brick1x + brick_width) AND
+             (pixel_row >= brick1y - brick_height) AND
+             (pixel_row <= brick1y + brick_height) THEN
+                brick_on <= '1';
+        ELSIF brick2present = '1' AND ((pixel_col >= (brick1x+150) - brick_width) OR ((brick1x) <= brick_width)) AND
+        (pixel_col <= (brick1x+150) + brick_width) AND
+             (pixel_row >= brick1y - brick_height) AND
+             (pixel_row <= brick1y + brick_height) THEN
+                brick_on <= '1';
+        ELSIF brick3present = '1' AND ((pixel_col >= (brick1x+300) - brick_width) OR ((brick1x) <= brick_width)) AND
+        (pixel_col <= (brick1x+300) + brick_width) AND
+             (pixel_row >= brick1y - brick_height) AND
+             (pixel_row <= brick1y + brick_height) THEN
+                brick_on <= '1';
+        ELSIF brick4present = '1' AND ((pixel_col >= (brick1x+450) - brick_width) OR ((brick1x) <= brick_width)) AND
+        (pixel_col <= (brick1x+450) + brick_width) AND
+             (pixel_row >= brick1y - brick_height) AND
+             (pixel_row <= brick1y + brick_height) THEN
+                brick_on <= '1';
+        ELSIF brick5present = '1' AND ((pixel_col >= (brick1x) - brick_width) OR ((brick1x) <= brick_width)) AND
+        (pixel_col <= (brick1x) + brick_width) AND
+             (pixel_row >= (brick1y+brick1y) - brick_height) AND
+             (pixel_row <= (brick1y+brick1y) + brick_height) THEN
+                brick_on <= '1';
+        ELSIF brick6present = '1' AND ((pixel_col >= (brick1x+150) - brick_width) OR ((brick1x) <= brick_width)) AND
+        (pixel_col <= (brick1x+150) + brick_width) AND
+             (pixel_row >= (brick1y+brick1y) - brick_height) AND
+             (pixel_row <= (brick1y+brick1y) + brick_height) THEN
+                brick_on <= '1';
+.........................................................................................................................
+.........................................................................................................................
+        ELSIF brick15present = '1' AND ((pixel_col >= (brick1x+600) - brick_width) OR ((brick1x) <= brick_width)) AND
+              (pixel_col <= (brick1x+600) + brick_width) AND
+                   (pixel_row >= (brick1y+brick1y+brick1y) - brick_height) AND
+                   (pixel_row <= (brick1y+brick1y+brick1y) + brick_height) THEN
+                      brick_on <= '1';
+        ELSE
+            brick_on <= '0';
+        END IF;
+```
 ![alt text](good.jpg)
 #
