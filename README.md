@@ -6,8 +6,7 @@
 
 For our CPE 487 project, we decided to modify the base Lab 6 code to recreate the game 'Breakout', where the objective is to break all of the bricks at the top of the screen. (Display prints out "E487") When the game ends, pressing a button on the board will reset the game if either all bricks are broken (Display prints out "G00D") or the ball hits the bottom wall (Display prints out "L0SE")
 
-## Demo video
-
+## [Demo video](https://youtu.be/KR1i7qVgJVU)
 
 ## Attachments needed
 
