@@ -10,7 +10,8 @@ For our CPE 487 project, we decided to modify the base Lab 6 code to recreate th
 
 ## Attachments needed
 
-- Nothing other than the board, as the bat and game state is controlled by the buttons on the board, and game status is on the display.
+- VGA-capable monitor, or a VGA-to-HDMI converter to see video output
+- Nexys A7-100T board, the bat and game state is controlled by the buttons on the board, and game status is on the display.
 
 ## Modifications done to Lab 6 base code
 
